@@ -21,8 +21,8 @@ let tareas = {}
 //DOMContentLoaded seria algo asi como el useEffect de react
 document.addEventListener('DOMContentLoaded', () =>{
   //estoy pintado el localstorage para q no se borre en caaso q actualice:
-  if (localStorage.getItem('tareas')){
-    tareas = JSON.parse(localStorage.getItem('tareas'))
+  if (localStorage.getItem('miLlave')){
+    tareas = JSON.parse(localStorage.getItem('miLlave'))
   }
   //estoy pintando las tareas 1 y 2 una sola vez y no cada vez q agrego una tarea diferente
   pintarDatos()//podria pasar la e si quisiera
@@ -70,7 +70,7 @@ const setTarea = (e) => {
 
 const pintarDatos = () => {
   //almacenar en el locla storage
-  localStorage.setItem('tareas', JSON.stringify(tareas))
+  localStorage.setItem('miLlave', JSON.stringify(tareas))
 
   if(Object.values(tareas).length === 0){
     //voy a pintra el div de la carita miestras no hayan tareas
